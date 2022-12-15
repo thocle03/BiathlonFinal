@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h1>Se connecter</h1>
+
+	{{ form_start(form) }}
+	{{ form_row(form.username) }}
+	{{ form_row(form.password) }}
+	{{ form_errors(form) }}
+	<input type="submit" value="Se connecter" class="btn btn-primary">
+	{{ form_end(form) }}
+
+{% endblock %}

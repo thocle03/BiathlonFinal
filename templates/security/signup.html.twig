@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h1>Nouveau Compte</h1>
+
+	{{ form_start(form) }}
+	{{ form_row(form.username) }}
+	{{ form_row(form.password) }}
+	{{ form_row(form.image) }}
+	{{ form_errors(form) }}
+	<input type="submit" value="Créer compte" class="btn btn-primary">
+	{{ form_end(form) }}
+
+{% endblock %}
