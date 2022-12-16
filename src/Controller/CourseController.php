@@ -18,7 +18,7 @@ class CourseController extends AbstractController
     {
         $courses = $doctrine->getRepository(Course::class)->findAll();
         return $this->render("course/index.html.twig", [
-            //"courses" => $courses
+            "courses" => $courses
         ]);
     }
 

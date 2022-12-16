@@ -19,22 +19,22 @@
 	<body >
 		<header>
 			{% block header %}
-				<nav class="navbar navbar-expand-lg bg-light">
+				<nav class="navbar navbar-expand-lg bg-primary">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="/">TocySport</a>
+						<a class="navbar-brand text-light" href="/">TocySport</a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 								<li class="nav-item">
-									<a class="nav-link active" aria-current="page" href="/">Accueil</a>
+									<a class="nav-link active text-light" aria-current="page" href="/">Accueil</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/course/create">Nouvelle course</a>
+									<a class="nav-link text-light" href="/course/create">Nouvelle course</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/signup">nouveau compte</a>
+									<a class="nav-link text-light" href="/signup">nouveau compte</a>
 								</li>
 
 							</ul>
@@ -45,9 +45,9 @@
 							{% endif %}#}
 							{% if app.user %}
 
-								<a class="nav-link" href="/logout">Déconnexion</a>
+								<a class="nav-link text-light" href="/logout">Déconnexion</a>
 							{% else %}
-								<a class="nav-link" href="/login">Connexion</a>
+								<a class="nav-link text-light" href="/login">Connexion</a>
 							{% endif %}
 
 						</div>
@@ -55,7 +55,7 @@
 				</nav>
 			{% endblock %}
 		</header>
-		<div class="container">
+		<div class="container font_body">
 		{% block body %}{% endblock %}
 		</div> 
 	</body>

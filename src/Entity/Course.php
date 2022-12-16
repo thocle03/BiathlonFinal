@@ -26,7 +26,7 @@ class Course
     #[ORM\Column()]
     private string $name;
 
-    #[ORM\Column(nullable: true)]
+    #[ORM\Column()]
     private string $image;
 
     #[ORM\Column()]
