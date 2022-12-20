@@ -8,13 +8,13 @@
 					<h1 class="h3 mb-3 font-weight-normal">Créer votre compte</h1>
 					<div class="col-12">
 						{{ form_start(form) }}
-						{{ form_row(form.username) }}
+						{{ form_row(form.username, {'attr': {'class': 'mb-3 form-control'}}) }}
 					</div>
 					<div class="col-12">
-						{{ form_row(form.password) }}
+						{{ form_row(form.password, {'attr': {'class': 'mb-3 form-control'}}) }}
 					</div>
 					<div class="col-12">
-						{{ form_row(form.image) }}
+						{{ form_row(form.image, {'attr': {'class': 'mb-3 form-control'}}) }}
 					</div>
 					<div class="col-12">
 						{{ form_errors(form) }}
