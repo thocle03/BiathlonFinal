@@ -2,16 +2,32 @@
 
 {% block body %}
 
-{% if error %}
-    <p class="alert alert-danger">{{ error.messageKey }}</p>
-{% endif %}
+	{% if error %}
+		<p class="alert alert-danger">{{ error.messageKey }}</p>
+	{% endif %}
 
-<form method="post">
-    <label for="username">Nom d'utilisateur</label>
-    <input type="username" name="_username" id="username" value="{{ last_username }}" class="form-control" required>
-    <label for="password">Mot de passe</label>
-    <input type="password" name="_password" id="password" class="form-control" required>
 
-    <input type="submit" value="Se connecter" class="btn btn-primary">
-</form>
+
+	<div class="container">
+		<div class="row">
+			<div class="login-form bg-light mt-4 p-4">
+				<form method="post" class="row g-3">
+					<h1 class="h3 mb-3 font-weight-normal">Connectez Vous</h1>
+					<div class="col-12">
+						<label for="username">Nom d'utilisateur</label>
+						<input type="username" name="username" id="username" value="{{ last_username }}" class="form-control" required>
+					</div>
+					<div class="col-12">
+						<label for="password">Mot de passe</label>
+						<input type="password" name="password" id="password" class="form-control" required>
+					</div>
+					<div class="col-12">
+						<button class="btn btn-lg btn-primary float-end" type="submit">
+							Se connecter
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 {% endblock %}

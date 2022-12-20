@@ -1,14 +1,29 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<h1>Nouveau Compte</h1>
-
-	{{ form_start(form) }}
-	{{ form_row(form.username) }}
-	{{ form_row(form.password) }}
-	{{ form_row(form.image) }}
-	{{ form_errors(form) }}
-	<input type="submit" value="Créer compte" class="btn btn-primary">
-	{{ form_end(form) }}
-
+	<div class="container">
+		<div class="row">
+			<div class="login-form bg-light mt-4 p-4">
+				<form method="post" class="row g-3">
+					<h1 class="h3 mb-3 font-weight-normal">Créer votre compte</h1>
+					<div class="col-12">
+						{{ form_start(form) }}
+						{{ form_row(form.username) }}
+					</div>
+					<div class="col-12">
+						{{ form_row(form.password) }}
+					</div>
+					<div class="col-12">
+						{{ form_row(form.image) }}
+					</div>
+					<div class="col-12">
+						{{ form_errors(form) }}
+						<input type="submit" value="Créer compte" class="btn btn-primary">
+						{{ form_end(form) }}
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
 {% endblock %}
