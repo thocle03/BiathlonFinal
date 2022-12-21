@@ -11,29 +11,31 @@
 <body>
 
 <div class="jumbotron text-center">
-    <h1>Mon premier formulaire</h1>
-    <p>la liste de mes articles</p>
+    <h1>Utilisateurs Tocy Sport</h1>
+    <p>Liste de tous les Utilisateurs et il faudrait aussi ajouter leurs droits</p>
 </div>
 
 <div class="container">
     <div class="row">
         {% if users is not empty %}
-            <table>
+            <table class="table">
                 <thead>
                 <tr>
-                    <th>Titre</th>
-                    <th>Auteur</th>
-                    <th>Description</th>
-                    <th>Delete</th>
-                    <th>Update</th>
+                    <th scope="col">id</th>
+                    <th scope="col">nom d'utilisateur</th>
+                    <th scope="col">Mot de passe</th>
+                    <th scope="col">Pseudo</th>
+                    <th scope="col">Option</th>
+                    <th scope="col">Option</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for user in users %}
                     <tr>
+                        <td>{{ user.id }}</td>
                         <td>{{ user.username }}</td>
                         <td>{{ user.password }}</td>
-                        <td>{{ user.username }}</td>
+                        <td>{{ user.image }}</td>
                         <td><a href="delete/{{ user.id }}">Delete</a></td>
                         <td><a href="update/{{ user.id }}">Update</a></td>
                     </tr>
