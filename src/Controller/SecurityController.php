@@ -119,7 +119,7 @@ class SecurityController extends AbstractController
             $em = $doctrine->getManager(); // Récupération de l'EM
             $em->flush(); // Synchronisation avec la BDD 
         }
-        return $this->render("user/readAll.html.twig", [
+        return $this->render("user/update.html.twig", [
             "form" => $form->createView()
         ]);
     }

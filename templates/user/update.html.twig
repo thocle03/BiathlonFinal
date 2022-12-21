@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Mon premier site</title>
+    <title>Update User</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -11,8 +11,8 @@
 <body>
 
 <div class="jumbotron text-center">
-    <h1>Mon premier formulaire</h1>
-    <p>editer un article</p>
+    <h1>Mettre à jour son profil</h1>
+    <p>maintenant</p>
 </div>
 
 <div class="container">
@@ -22,20 +22,20 @@
             <tbody>
             <tr>
                 <th>Title:</th>
-                <td>{{ form_widget(form.name) }}</td>
+                <td>{{ form_widget(form.username) }}</td>
             </tr>
             <tr>
                 <th>Author:</th>
                 <td>{{ form_widget(form.password) }}</td>
             </tr>
-            <tr>
+            {# <tr>
                 <th>Article Body:</th>
                 <td>{{ form_widget(form.name) }}</td>
             </tr>
             <tr>
                 <th></th>
                 <td>{{ form_widget(form.save) }}</td>
-            </tr>
+            </tr> #}
             </tbody>
         </table>
 
