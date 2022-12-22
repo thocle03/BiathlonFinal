@@ -28,14 +28,14 @@
 							class="text-muted">{# {{ course.create_at }} #}
 						</small>
 					</div>
-					<button type="button" class="btn btn-color mt-2" data-toggle="modal" data-target="#staticBackdrop{{course.id}}">
-						Voir Course
-					</button>
 					<a class="btn btn-color" href="/course/update/{{ course.id }}">
 						Modifier Course
 					</a>
 					<a class="btn btn-color" href="/course/delete/{{ course.id }}">
 						Supprimer Course
+					</a>
+					<a class="btn btn-color" href="/course/read/{{ course.id }}">
+						Voir Course
 					</a>
 				</div>
 			</div>
