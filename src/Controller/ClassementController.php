@@ -14,7 +14,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ClassementController extends AbstractController
 {
 
-    #[Route('/eee', name: 'test')]
+    #[Route('/classement/create', name: 'test')]
     public function create(Request $request)
     {
         $classement = new Classement();
