@@ -18,10 +18,10 @@ class ClassementController extends AbstractController
     public function create(Request $request)
     {
         $classement = new Classement();
-        $form = $this->createForm(classementType::class, $classement);
+        $form = $this->createForm(ClassementType::class, $classement);
         $form->handleRequest($request);
 
-        return $this->render("classment/create.html.twig", [
+        return $this->render("classement/create.html.twig", [
             "formulaire" => $form->createView()
         ]);
     }
