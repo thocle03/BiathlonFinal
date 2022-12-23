@@ -70,4 +70,13 @@ class ClassementController extends AbstractController
             "lists" => $classementRepository->findAll()
         ]);
     }
+
+    #[Route("/rankbyyears")]
+    public function readClassement(ManagerRegistry $doctrine)
+    {
+        $classementRepository = $doctrine->getRepository(Classement::class);
+        return $this->render("rankbyyears.html.twig", [
+            "lists" => $classementRepository->findAll()
+        ]);
+    }
 }
