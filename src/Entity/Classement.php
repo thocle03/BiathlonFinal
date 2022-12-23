@@ -18,12 +18,6 @@ class Classement
     private int $id;
 
     #[Assert\NotBlank(message: "Le nom ne peut pas etre vidé")]
-    #[Assert\Length(
-        min: 5,
-        max: 70,
-        minMessage: "Le nom est trop court",
-        maxMessage: "Le nom est trop long",
-    )]
 
     #[ORM\Column()]
     private string $position;
