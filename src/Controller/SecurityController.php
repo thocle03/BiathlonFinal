@@ -123,4 +123,13 @@ class SecurityController extends AbstractController
             "form" => $form->createView()
         ]);
     }
+
+    #[Route("/user/delete/{id}")]
+    public function delete(ManagerRegistry $doctrine, User $user)
+    {
+        $em = $doctrine->getManager(); // Récupération de l'EM
+        $em->remove($user); // Suppression de l'objet dans l'EM
+        $em->flush(); // Synchronisation avec la BDD    
+        return $this->redirectToRoute("index");
+    }
 }
