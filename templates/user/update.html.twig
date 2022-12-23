@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 <html lang="fr">
 <head>
     <title>Update User</title>
@@ -16,31 +16,17 @@
 </div>
 
 <div class="container">
-    <div class="row">
-        {{ form_start(form) }}
-        <table>
-            <tbody>
-            <tr>
-                <th>Title:</th>
-                <td>{{ form_widget(form.username) }}</td>
-            </tr>
-            <tr>
-                <th>Author:</th>
-                <td>{{ form_widget(form.password) }}</td>
-            </tr>
-            {# <tr>
-                <th>Article Body:</th>
-                <td>{{ form_widget(form.name) }}</td>
-            </tr>
-            <tr>
-                <th></th>
-                <td>{{ form_widget(form.save) }}</td>
-            </tr> #}
-            </tbody>
-        </table>
+{% block body %}
+	{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
+	{{ form_row(form.username) }}
+    {{ form_row(form.password) }}
+	{{ form_row(form.image) }}
+	<input type="submit" value="Modifier" class="btn btn-primary">
 
-        {{ form_end(form) }}
-    </div>
+	{{form_end(form)}}
+{% endblock %}
+
+    
 </div>
 
 </body>
