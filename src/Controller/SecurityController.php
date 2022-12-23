@@ -110,6 +110,7 @@ class SecurityController extends AbstractController
     #[Route("/user/update/{id}")]
     public function update(Request $request, ManagerRegistry $doctrine, User $user)
     {
+        $user = new User($this->passwordHasher);
         dump($user);
         $form = $this->createForm(UserType::class, $user);
 
