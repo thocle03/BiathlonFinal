@@ -38,28 +38,32 @@
 								<li class="nav-item">
 									<a class="nav-link text-light" href="/rankbyyears">Classement par année</a>
 								</li>
-								<li>
+								<li class="nav-item">
 									{% if app.user %}
 										<a class="nav-link text-light" href="/">{{ app.user.username }}</a>
 									{% endif %}
 								</li>
 							</ul>
 
-							{# 
-																												{% if app.user.roles == "thomas" %}
-																					
-																													<a class="nav-link" href="/sign_in">Nouveau compte</a>
+							{#	{% if app.user.roles == "thomas" %}						
+																														<a class="nav-link" href="/sign_in">Nouveau compte</a>
 																												{% endif %}#}
-							{% if app.user %}
-								{% else %}
-									<a class="nav-link text-light" href="/signup">nouveau compte</a>
-							{% endif %}
-							{% if app.user %}
+							<ul class="navbar-nav mb-2 mb-lg-0">
+								<li class="nav-item">
+									{% if app.user %}
+										{% else %}
+											<a class="nav-link text-light" href="/signup">Nouveau compte</a>
+									{% endif %}
+								</li>
+								<li class="nav-item">
+									{% if app.user %}
 
-								<a class="nav-link text-light" href="/logout">Déconnexion</a>
-							{% else %}
-								<a class="nav-link text-light" href="/login">Connexion</a>
-							{% endif %}
+										<a class="nav-link text-light" href="/logout">Déconnexion</a>
+									{% else %}
+										<a class="nav-link text-light" href="/login">Connexion</a>
+									{% endif %}
+								</li>
+							</ul>
 
 						</div>
 					</div>
