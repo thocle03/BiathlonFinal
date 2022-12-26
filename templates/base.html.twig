@@ -39,13 +39,18 @@
 								<li class="nav-item">
 									<a class="nav-link text-light" href="/rankbyyears">Classement par année</a>
 								</li>
-
+								<li>
+									{% if app.user %}
+										<a class="nav-link text-light" href="/">{{ app.user.username }}</a>
+									{% endif %}
+								</li>
 							</ul>
+
 							{# 
-														{% if app.user.roles == "thomas" %}
-							
-															<a class="nav-link" href="/sign_in">Nouveau compte</a>
-														{% endif %}#}
+																					{% if app.user.roles == "thomas" %}
+														
+																						<a class="nav-link" href="/sign_in">Nouveau compte</a>
+																					{% endif %}#}
 							{% if app.user %}
 
 								<a class="nav-link text-light" href="/logout">Déconnexion</a>
