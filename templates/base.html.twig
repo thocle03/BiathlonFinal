@@ -43,11 +43,18 @@
 										<a class="nav-link text-light" href="/">{{ app.user.username }}</a>
 									{% endif %}
 								</li>
+								<li class="nav-item">
+									{% if is_granted('IS_AUTHENTTIFICATED_FULLY') %}
+										{% if app.user.username == "thomas" %}
+											<a class="nav-link text-light" href="/user/readAll">liste des utillisateurs</a>
+										{% endif %}
+									{% endif %}
+								</li>
 							</ul>
 
 							{#	{% if app.user.roles == "thomas" %}						
-																														<a class="nav-link" href="/sign_in">Nouveau compte</a>
-																												{% endif %}#}
+																																					<a class="nav-link" href="/sign_in">Nouveau compte</a>
+																																			{% endif %}#}
 							<ul class="navbar-nav mb-2 mb-lg-0">
 								<li class="nav-item">
 									{% if app.user %}
