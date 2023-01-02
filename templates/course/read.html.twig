@@ -2,7 +2,9 @@
 {% block body %}
 	<div class="d-flex flex-wrap justify-content-around">
 		<div class="card m-5 mb-0" style="width: 40rem;">
-			<img src="uploads/{{ course.image }}" class="img-rounded card-img-top" alt="{{course.image}}"/>
+			<img src="{{ asset('uploads/' ~ course.image) }}" class="img-rounded card-img-top"
+			 alt="{{course.image}}" />
+			
 			<div class="card-body d-flex flex-column justify-content-between">
 				<div>
 					<h5 class="card-title" style="text-align: center;">{{ course.name }}</h5>

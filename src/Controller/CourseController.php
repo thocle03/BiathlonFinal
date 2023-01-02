@@ -121,4 +121,13 @@ class CourseController extends AbstractController
             "lists" => $classementRepository->findAll()
         ]);
     }
+
+    #[Route("/video")]
+    public function video(ManagerRegistry $doctrine)
+    {
+        $classementRepository = $doctrine->getRepository(Course::class);
+        return $this->render("video.html.twig", [
+            "lists" => $classementRepository->findAll()
+        ]);
+    }
 }

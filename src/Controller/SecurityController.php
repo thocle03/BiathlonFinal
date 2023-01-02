@@ -15,6 +15,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Security\Core\Security;
 
 class SecurityController extends AbstractController
 {
@@ -27,7 +28,7 @@ class SecurityController extends AbstractController
             "error" => $error,
             "last_username" => $lastUsername
         ]);
-        dump($lastUsername);
+        /* dump($lastUsername); */
     }
     public function __construct(UserPasswordHasherInterface $passwordHasher)
     {
@@ -39,9 +40,13 @@ class SecurityController extends AbstractController
     }
 
     #[Route("/signup", name: "signup")]
-    public function create(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
+    public function create(Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger, Security $security): Response
     {
+        if ($security->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('index');
+        }
         $user = new User($this->passwordHasher);
+        $user->setRoles(['ROLE_USER']);
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
@@ -75,6 +80,7 @@ class SecurityController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($user);
             $em->flush();
+            
             return $this->redirectToRoute('login');
             
         }
@@ -88,6 +94,7 @@ class SecurityController extends AbstractController
         ]);
     }
 
+    #[Security("is_granted('ROLE_ADMIN')")]
     #[Route("/user/readAll")]
     public function readAll(ManagerRegistry $doctrine)
     {
