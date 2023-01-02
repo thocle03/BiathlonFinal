@@ -49,9 +49,11 @@
 									{% endif %}
 								</li>
 								<li class="nav-item">
+								{% if app.user %}
 									{% if app.user.username == "thomas" %}
 										<a class="nav-link text-light" href="/user/readAll">liste des utillisateurs</a>
 									{% endif %}
+								{% endif %}
 								</li>
 							</ul>
 

@@ -97,7 +97,7 @@ class SecurityController extends AbstractController
         ]);
     }
     
-    #[Route("/user/view/{id}")]
+    #[Route("/user/read/{id}")]
     public function read(ManagerRegistry $doctrine, int $id)
     {
         $userRepository = $doctrine->getRepository(User::class);
