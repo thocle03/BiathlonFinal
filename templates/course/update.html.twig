@@ -1,21 +1,29 @@
 {% extends "base.html.twig" %}
+
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 {% block body %}
-	{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
-	{{ form_row(form.name) }}
-	{{ form_row(form.classement1) }}
-	{{ form_row(form.classement2) }}
-	{{ form_row(form.classement3) }}
-	{{ form_row(form.classement4) }}
-	{{ form_row(form.classement5) }}
-	{{ form_row(form.classement6) }}
-	{{ form_row(form.classement7) }}
-	{{ form_row(form.classement8) }}
-	{{ form_row(form.classement9) }}
-	{{ form_row(form.classement10) }}
-	
-	{{ form_row(form.image) }}
-	<input type="submit" value="Modifier" class="btn btn-primary">
+	{% if is_granted('ROLE_ADMIN') %}
+		{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
+		{{ form_row(form.name) }}
+		{{ form_row(form.classement1) }}
+		{{ form_row(form.classement2) }}
+		{{ form_row(form.classement3) }}
+		{{ form_row(form.classement4) }}
+		{{ form_row(form.classement5) }}
+		{{ form_row(form.classement6) }}
+		{{ form_row(form.classement7) }}
+		{{ form_row(form.classement8) }}
+		{{ form_row(form.classement9) }}
+		{{ form_row(form.classement10) }}
 
-	{{form_end(form)}}
+		{{ form_row(form.image) }}
+		<input type="submit" value="Modifier" class="btn btn-primary">
+
+		{{form_end(form)}}
+	{% else %}
+		<h2 style="text-align:center">Vous n'êtes pas autorisé a voir le contenue de cette page</h2>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/" class="btn btn-light">Retour</a>
+		</div>
+	{% endif %}
 {% endblock %}

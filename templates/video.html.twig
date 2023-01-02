@@ -1,16 +1,33 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<br>
-	<div>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/5IQ0DvKUgN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-	<div>
-		<iframe width="699" height="393" src="https://www.youtube.com/embed/cyzvVSXX0_Q" title="Biathlon Festival Feucherolles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	{% if app.user %}
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/5IQ0DvKUgN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<iframe width="699" height="393" src="https://www.youtube.com/embed/cyzvVSXX0_Q" title="Biathlon Festival Feucherolles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<iframe width="699" height="393" src="https://www.youtube.com/embed/EBJAJ1WhkYQ" title="Biathlon Festival Feucherolles 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<iframe width="524" height="393" src="https://www.youtube.com/embed/TCg61zLU-i4" title="Biathlon Feucherolles Festival 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
 
-		<iframe width="699" height="393" src="https://www.youtube.com/embed/EBJAJ1WhkYQ" title="Biathlon Festival Feucherolles 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-		<iframe width="524" height="393" src="https://www.youtube.com/embed/TCg61zLU-i4" title="Biathlon Feucherolles Festival 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-	</div>
+	{% else %}
+		<h2 style="text-align:center">Vous devez vous connecter pour voir le contenue de cette page</h2>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/login" class="btn btn-light">Se connecter</a>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/signup" class="btn btn-light">Nouveau compte</a>
+		</div>
+	{% endif %}
 {% endblock %}

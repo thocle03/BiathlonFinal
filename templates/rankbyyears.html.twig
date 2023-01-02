@@ -1,225 +1,237 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<br><br>
-	<div class="d-flex justify-content-around">
-		<div style="width: 20%;">
-			<h3>Saison 2020/2021</h3>
-			<ol class="list-group">
-				<li class="list-group-item-warning list-group-item list-group-item-action">
-					<pres>1
-						<a href="#">Thomas</a>
-						120 points</pres>
-				</li>
-				<li class="list-group-item-secondary list-group-item list-group-item-action">
-					<pres>2
-						<a href="#">Romain</a>
-						70 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>3
-						<a href="#">Simon</a>
-						57 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>4
-						<a href="#">Paulin</a>
-						37 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>5
-						<a href="#">Cyrian</a>
-						37 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>6
-						<a href="#">Damien</a>
-						36 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>7
-						<a href="#">Loan</a>
-						26 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>8
-						<a href="#">Mathis</a>
-						24 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>9
-						<a href="#">Maxime</a>
-						19 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>10
-						<a href="#">Eloise</a>
-						10 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>11
-						<a href="#">Elouan</a>
-						8 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>12
-						<a href="#">Mathilde</a>
-						6 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>13
-						<a href="#">Ulysse</a>
-						5 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>14
-						<a href="#">Marion</a>
-						4 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>15
-						<a href="#">Florian</a>
-						4 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>16
-						<a href="#">Louis</a>
-						3 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>17
-						<a href="#">Johanna</a>
-						2 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>5
-						<a href="#">Enora</a>
-						2 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>18
-						<a href="#">Fabien</a>
-						1 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>19
-						<a href="#">Laurine</a>
-						1 points</pres>
-				</li>
+	{% if app.user %}
+		<br><br>
+		<div class="d-flex justify-content-around">
+			<div style="width: 20%;">
+				<h3>Saison 2020/2021</h3>
+				<ol class="list-group">
+					<li class="list-group-item-warning list-group-item list-group-item-action">
+						<pres>1
+							<a href="#">Thomas</a>
+							120 points</pres>
+					</li>
+					<li class="list-group-item-secondary list-group-item list-group-item-action">
+						<pres>2
+							<a href="#">Romain</a>
+							70 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>3
+							<a href="#">Simon</a>
+							57 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>4
+							<a href="#">Paulin</a>
+							37 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>5
+							<a href="#">Cyrian</a>
+							37 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>6
+							<a href="#">Damien</a>
+							36 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>7
+							<a href="#">Loan</a>
+							26 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>8
+							<a href="#">Mathis</a>
+							24 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>9
+							<a href="#">Maxime</a>
+							19 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>10
+							<a href="#">Eloise</a>
+							10 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>11
+							<a href="#">Elouan</a>
+							8 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>12
+							<a href="#">Mathilde</a>
+							6 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>13
+							<a href="#">Ulysse</a>
+							5 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>14
+							<a href="#">Marion</a>
+							4 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>15
+							<a href="#">Florian</a>
+							4 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>16
+							<a href="#">Louis</a>
+							3 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>17
+							<a href="#">Johanna</a>
+							2 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>5
+							<a href="#">Enora</a>
+							2 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>18
+							<a href="#">Fabien</a>
+							1 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>19
+							<a href="#">Laurine</a>
+							1 points</pres>
+					</li>
 
-			</ol>
-		</div>
-		<div style="width: 20%;">
-			<h3>Saison 2021/2022</h3>
-			<ol class="list-group">
-				<li class="list-group-item-warning list-group-item list-group-item-action">
-					<pres>1
-						<a href="#">Thomas</a>
-						120 points</pres>
-				</li>
-				<li class="list-group-item-secondary list-group-item">
-					<pres>2
-						<a href="#">Romain</a>
-						72 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>3
-						<a href="#">Loan</a>
-						62 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>4
-						<a href="#">Cyrian</a>
-						42 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>5
-						<a href="#">Damien</a>
-						28 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>6
-						<a href="#">Sylvain</a>
-						24 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>7
-						<a href="#">Paulin</a>
-						24 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>7
-						<a href="#">Eloise</a>
-						16 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>7
-						<a href="#">Mathis</a>
-						16 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>9
-						<a href="#">Antoine</a>
-						12 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>10
-						<a href="#">Xavier</a>
-						10 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>11
-						<a href="#">Matéo</a>
-						8 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>12
-						<a href="#">Paul</a>
-						8 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>13
-						<a href="#">Tituan</a>
-						6 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>14
-						<a href="#">Marion</a>
-						4 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>14
-						<a href="#">Florence</a>
-						4 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>16
-						<a href="#">Louis</a>
-						3 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>16
-						<a href="#">Floria</a>
-						3 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>16
-						<a href="#">Laurine</a>
-						3 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>19
-						<a href="#">Ethan</a>
-						1 points</pres>
-				</li>
-				<li class="list-group-item list-group-item-action">
-					<pres>20
-						<a href="#">Maxime</a>
-						1 points</pres>
-				</li>
+				</ol>
+			</div>
+			<div style="width: 20%;">
+				<h3>Saison 2021/2022</h3>
+				<ol class="list-group">
+					<li class="list-group-item-warning list-group-item list-group-item-action">
+						<pres>1
+							<a href="#">Thomas</a>
+							120 points</pres>
+					</li>
+					<li class="list-group-item-secondary list-group-item">
+						<pres>2
+							<a href="#">Romain</a>
+							72 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>3
+							<a href="#">Loan</a>
+							62 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>4
+							<a href="#">Cyrian</a>
+							42 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>5
+							<a href="#">Damien</a>
+							28 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>6
+							<a href="#">Sylvain</a>
+							24 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>7
+							<a href="#">Paulin</a>
+							24 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>7
+							<a href="#">Eloise</a>
+							16 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>7
+							<a href="#">Mathis</a>
+							16 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>9
+							<a href="#">Antoine</a>
+							12 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>10
+							<a href="#">Xavier</a>
+							10 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>11
+							<a href="#">Matéo</a>
+							8 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>12
+							<a href="#">Paul</a>
+							8 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>13
+							<a href="#">Tituan</a>
+							6 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>14
+							<a href="#">Marion</a>
+							4 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>14
+							<a href="#">Florence</a>
+							4 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>16
+							<a href="#">Louis</a>
+							3 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>16
+							<a href="#">Floria</a>
+							3 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>16
+							<a href="#">Laurine</a>
+							3 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>19
+							<a href="#">Ethan</a>
+							1 points</pres>
+					</li>
+					<li class="list-group-item list-group-item-action">
+						<pres>20
+							<a href="#">Maxime</a>
+							1 points</pres>
+					</li>
 
-			</ol>
+				</ol>
+			</div>
 		</div>
-	</div>
-	<br><br>
-	{% endblock %}
+		<br><br>
+	{% else %}
+		<h2 style="text-align:center">Vous devez vous connecter pour voir le contenue de cette page</h2>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/login" class="btn btn-light">Se connecter</a>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/signup" class="btn btn-light">Nouveau compte</a>
+		</div>
+	{% endif %}
+{% endblock %}

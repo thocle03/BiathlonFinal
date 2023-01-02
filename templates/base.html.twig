@@ -32,10 +32,8 @@
 									<a class="nav-link active text-light" aria-current="page" href="/">Accueil</a>
 								</li>
 								<li class="nav-item">
-									{% if app.user %}
-										{% if app.user.username == "thomas" %}
+									{% if is_granted('ROLE_ADMIN') %}
 											<a class="nav-link text-light" href="/course/create">Nouvelle course</a>
-										{% endif %}
 									{% endif %}
 								</li>
 								<li class="nav-item">
@@ -50,23 +48,17 @@
 										<a class="nav-link text-light" href="/users">{{ app.user.username }}</a>
 									{% endif %}
 								</li>
+								
 								<li class="nav-item">
-									{% if is_granted('IS_AUTHENTTIFICATED_FULLY') %}
-										{{ app.user.username }}
-									{% endif %}
-								</li>
-								<li class="nav-item">
-									{% if app.user %}
-										{% if app.user.username == "thomas" %}
-											<a class="nav-link text-light" href="/user/readAll">liste des utillisateurs</a>
-										{% endif %}
+									{% if is_granted('ROLE_ADMIN') %}
+										<a class="nav-link text-light" href="/user/readAll">liste des utillisateurs</a>
 									{% endif %}
 								</li>
 							</ul>
 
 							{#	{% if app.user.roles == "thomas" %}						
-																																																																	<a class="nav-link" href="/sign_in">Nouveau compte</a>
-																																																															{% endif %}#}
+																																																																								<a class="nav-link" href="/sign_in">Nouveau compte</a>
+																																																																						{% endif %}#}
 							<ul class="navbar-nav mb-2 mb-lg-0">
 								<li class="nav-item">
 									{% if app.user %}

@@ -1,37 +1,67 @@
 {% extends "base.html.twig" %}
 {% block body %}
-	<div class="d-flex flex-wrap justify-content-around">
-		<div class="card m-5 mb-0" style="width: 40rem;">
-			<img src="{{ asset('uploads/' ~ course.image) }}" class="img-rounded card-img-top"
-			 alt="{{course.image}}" />
-			
-			<div class="card-body d-flex flex-column justify-content-between">
-				<div style="text-align: center;">
+	{% if app.user %}
+		<div class="d-flex flex-wrap justify-content-around">
+			<div class="card m-5 mb-0" style="width: 40rem;">
+				<img src="{{ asset('uploads/' ~ course.image) }}" class="img-rounded card-img-top" alt="{{course.image}}"/>
+
+				<div class="card-body d-flex flex-column justify-content-between">
+					<div style="text-align: center;">
 						<h5 class="card-title" style="text-align: center;">{{ course.name }}</h5>
 						<h6 class="card-title" style="text-align: center;">Classement + temps + tir</h6>
-						<p class="card-text mb-2"><b style="margin-right: 15px">1</b>{{ course.classement1 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">2</b>{{ course.classement2 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">3</b>{{ course.classement3 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">4</b>{{ course.classement4 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">5</b>{{ course.classement5 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">6</b>{{ course.classement6 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">7</b>{{ course.classement7 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">8</b>{{ course.classement8 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">9</b>{{ course.classement9 }}</p>
-						<p class="card-text mb-2"><b style="margin-right: 15px">10</b>{{ course.classement10 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">1</b>
+							{{ course.classement1 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">2</b>
+							{{ course.classement2 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">3</b>
+							{{ course.classement3 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">4</b>
+							{{ course.classement4 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">5</b>
+							{{ course.classement5 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">6</b>
+							{{ course.classement6 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">7</b>
+							{{ course.classement7 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">8</b>
+							{{ course.classement8 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">9</b>
+							{{ course.classement9 }}</p>
+						<p class="card-text mb-2">
+							<b style="margin-right: 15px">10</b>
+							{{ course.classement10 }}</p>
 					</div>
-				{% if is_granted('ROLE_ADMIN') %}
-					<a class="btn btn-warning" href="/course/update/{{ course.id }}">
-						Modifier Course
-					</a>
-					<a class="btn btn-danger" href="/course/delete/{{ course.id }}">
-						Supprimer Course
-					</a>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a class="btn btn-warning" href="/course/update/{{ course.id }}">
+							Modifier Course
+						</a>
+						<a class="btn btn-danger" href="/course/delete/{{ course.id }}">
+							Supprimer Course
+						</a>
 					{% endif %}
+				</div>
 			</div>
 		</div>
-	</div>
 
-
+	{% else %}
+		<h2 style="text-align:center">Vous devez vous connecter pour voir le contenue de cette page</h2>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/login" class="btn btn-light">Se connecter</a>
+		</div>
+		<br>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/signup" class="btn btn-light">Nouveau compte</a>
+		</div>
+	{% endif %}
 
 {% endblock %}

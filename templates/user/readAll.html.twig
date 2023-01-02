@@ -1,6 +1,4 @@
-
-
-	{# <head>
+{# <head>
 		<title>Bootstrap Example</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +6,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	</head> #}
-    {% extends "base.html.twig" %}
-    
-    {% block body %}
-    <br>
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{% if is_granted('ROLE_ADMIN') %}
+		<br>
 		<style>
 			body {
 				background-color: lightskyblue;
@@ -33,7 +32,7 @@
 								<th scope="col">Mot de passe</th>
 								<th scope="col">Option</th>
 								<th scope="col">Option</th>
-                                <th scope="col">Option</th>
+								<th scope="col">Option</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -48,7 +47,7 @@
 									<td>
 										<a class="btn btn-light" href="update/{{ user.id }}">Update</a>
 									</td>
-                                    <td>
+									<td>
 										<a class="btn btn-light" href="read/{{ user.id }}">Read</a>
 									</td>
 								</tr>
@@ -60,5 +59,10 @@
 				{% endif %}
 			</div>
 		</div>
-
-    {% endblock %}
+	{% else %}
+		<h2 style="text-align:center">Vous n'êtes pas autorisé a voir le contenue de cette page</h2>
+		<div class="d-flex flex-wrap justify-content-around">
+			<a href="/" class="btn btn-light">Retour</a>
+		</div>
+	{% endif %}
+{% endblock %}
