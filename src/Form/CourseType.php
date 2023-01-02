@@ -15,7 +15,17 @@ class CourseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("name", TextType::class, ["label" => "Nom"])
+            ->add("name", TextType::class, ["label" => " "])
+            ->add("classement1", TextType::class, ["label" => "Position 1 + temps + tir"])
+            ->add("classement2", TextType::class, ["label" => "Position 2"])
+            ->add("classement3", TextType::class, ["label" => "Position 3"])
+            ->add("classement4", TextType::class, ["label" => "Position 4"])
+            ->add("classement5", TextType::class, ["label" => "Position 5"])
+            ->add("classement6", TextType::class, ["label" => "Position 6"])
+            ->add("classement7", TextType::class, ["label" => "Position 7"])
+            ->add("classement8", TextType::class, ["label" => "Position 8"])
+            ->add("classement9", TextType::class, ["label" => "Position 9"])
+            ->add("classement10", TextType::class, ["label" => "Position 10"])
             ->add("image", FileType::class, [
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,

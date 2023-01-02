@@ -1,33 +1,23 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
-<html lang="fr">
-<head>
-    <title>Update User</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
 
-<div class="jumbotron text-center">
-    <h1>Mettre à jour son profil</h1>
-    <p>maintenant</p>
-</div>
+		{% extends "base.html.twig" %}
 
-<div class="container">
-{% block body %}
-	{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
-	{{ form_row(form.username) }}
-    {{ form_row(form.password) }}
-	{{ form_row(form.image) }}
-	<input type="submit" value="Mettre à jour" class="btn btn-primary">
+		{% block body %}
+			<div class="jumbotron text-center">
+				<h1>Mettre à jour son profil</h1>
+			</div>
 
-	{{form_end(form)}}
-{% endblock %}
+			<div class="container">
+				{% block form %}
+					{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
+					{{ form_row(form.username) }}
+					{{ form_row(form.password) }}
+					{{ form_row(form.image) }}
+					<input type="submit" value="Mettre à jour" class="btn btn-primary">
 
-    
-</div>
+					{{form_end(form)}}
+				{% endblock %}
 
-</body>
-</html>
+
+			</div>
+		{% endblock %}

@@ -3,6 +3,7 @@
 {% block body %}
 	{{form_start(form, {"attr":{"novalidate": "novalidate"}})}}
 	{{ form_row(form.name) }}
+	{{ form_row(form.classement) }}
 	{{ form_row(form.image) }}
 	<input type="submit" value="Modifier" class="btn btn-primary">
 
