@@ -53,13 +53,14 @@ class CourseController extends AbstractController
                 // instead of its contents
                 dump($newFilename);
                 $course->setImage($newFilename);
+                
             }
 
             // ... persist the $product variable or any other work
             $em = $doctrine->getManager();
             $em->persist($course);
             $em->flush();
-
+            return $this->redirectToRoute("index");
             //return $this->redirectToRoute('app_product_list');
         }
 
@@ -71,7 +72,7 @@ class CourseController extends AbstractController
     #[Route("/course/update/{id}")]
     public function update(Request $request, ManagerRegistry $doctrine, Course $course)
     {
-        dump($course);
+        /* dump($course); */
         $form = $this->createForm(courseType::class, $course);
 
         $form->handleRequest($request);
@@ -79,6 +80,7 @@ class CourseController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $doctrine->getManager(); // Récupération de l'EM
             $em->flush(); // Synchronisation avec la BDD 
+            return $this->redirectToRoute("index");
         }
         return $this->render("course/update.html.twig", [
             "form" => $form->createView()
@@ -116,18 +118,18 @@ class CourseController extends AbstractController
     #[Route("/rankbyyears")]
     public function readClassement(ManagerRegistry $doctrine)
     {
-        $classementRepository = $doctrine->getRepository(Course::class);
-        return $this->render("rankbyyears.html.twig", [
-            "lists" => $classementRepository->findAll()
-        ]);
+        return $this->render("rankbyyears.html.twig");
     }
 
     #[Route("/video")]
     public function video(ManagerRegistry $doctrine)
     {
-        $classementRepository = $doctrine->getRepository(Course::class);
-        return $this->render("video.html.twig", [
-            "lists" => $classementRepository->findAll()
-        ]);
+        return $this->render("video.html.twig");
+    }
+
+    #[Route("/users")]
+    public function users(ManagerRegistry $doctrine)
+    {
+        return $this->render("users.html.twig");
     }
 }

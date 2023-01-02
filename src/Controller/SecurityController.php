@@ -102,6 +102,7 @@ class SecurityController extends AbstractController
         return $this->render("user/readAll.html.twig", [
             "users" => $userRepository->findAll()
         ]);
+        return $this->redirectToRoute("index");
     }
     
     #[Route("/user/read/{id}")]
