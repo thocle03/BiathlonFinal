@@ -95,7 +95,7 @@
 								{{ course.classement10 }}</p>
 						</div>
 						{% if is_granted('ROLE_ADMIN') %}
-							<a class="btn btn-warning" href="/course/update/{{ course.id }}">
+							<a class="btn btn-primary" href="/course/update/{{ course.id }}">
 								Modifier Course
 							</a>
 							<a class="btn btn-danger" href="/course/delete/{{ course.id }}">
@@ -112,7 +112,7 @@
 
 		{% endfor %}
 	{% else %}
-		<h2 style="text-align:center">Vous devez vous connecter pour voir le contenue de cette page</h2>
+		<h2 style="text-align:center">Vous devez vous connecter pour voir le contenu de cette page</h2>
 		<br>
 		<div class="d-flex flex-wrap justify-content-around">
 			<a href="/login" class="btn btn-light">Se connecter</a>
