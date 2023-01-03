@@ -6,6 +6,45 @@
 
 {% block body %}
 	{% if app.user %}
+	{# <div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-12">
+
+          <form action="{{ path('index') }}" method="get" class="form-inline">
+
+            <label for="sortBy" class="mr-sm-2">Trier par:</label>
+
+            <select name="sortBy" id="sortBy" class="form-control form-control-sm mr-sm-2" style="width: 20%">
+
+              <option value="name">Name</option>
+
+              <option value="create_at">Récent</option>
+
+            </select>
+
+            <label for="sortDirection" class="mr-sm-2">Direction:</label>
+
+            <select name="sortDirection" id="sortDirection" class="form-control form-control-sm mr-sm-2" style="width: 20%">
+
+              <option value="ASC">Ascending</option>
+
+              <option value="DESC">Descending</option>
+
+            </select>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-sm">Sort</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div> #}
 		{% for course in courses %}
 			{# <div class="col-m-4">
 					            <div class="card">
